@@ -12,5 +12,20 @@ In order to avoid versions problems, I have decided to do this with container (D
 
 
 2) What I have done ? :
-    To avoid versions problems I decided to make 3
+    To avoid versions problems I decided to make 3 docker's containers : one for node (server side), one for react (client side) and one for Mongo (database).
+
+    I follow these tutoriel which were not update with the new version of npm (and mainly npx, npx is a helper to create quickly applications with express and react, I believe it is a tool created by Facebook) :
+    _ https://medium.com/free-code-camp/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c
+    _ https://www.freecodecamp.org/news/create-a-fullstack-react-express-mongodb-app-using-docker-c3e3e21c4074/
+
+
+3) Run the project :
+    To run the project : $ docker-compose up (or $docker-compose --verbose up if you want log for you developpement)
+
+4) React :
+    To develop the React app, I have used this web site : https://facebook.github.io/create-react-app/docs/getting-started
+
+5) Node :
+
+6) Mongo :
     
