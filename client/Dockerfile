@@ -3,7 +3,7 @@ FROM mhart/alpine-node:8.11.4
 # Set the working directory to /client
 WORKDIR /client
 # copy package.json into the container at /client
-COPY package.json /client/
+COPY package*.json /client/
 # install dependencies
 RUN npm install
 # Copy the current directory contents into the container at /client

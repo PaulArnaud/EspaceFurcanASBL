@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-
 // Variable to be sent to Frontend with Database status
 let databaseConnection = "Waiting for Database response...";
 router.get("/", function(req, res, next) {    res.send(databaseConnection);});
