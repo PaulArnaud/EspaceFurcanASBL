@@ -31,4 +31,5 @@ In order to avoid versions problems, I have decided to do this with container (D
 5) Node :
 
 6) Mongo :
+    As many web site we have a connection for user and admin.
     
