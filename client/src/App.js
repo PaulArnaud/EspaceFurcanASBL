@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Button from "./Button";
+import NavBar from "./NavBar";
 
 class App extends Component {
     constructor(props) {
@@ -39,6 +41,8 @@ class App extends Component {
                 </header>
                 <p className="App-intro">{this.state.apiResponse}</p>
                 <p className="App-intro">{this.state.dbResponse}</p>
+                <Button></Button>
+                <NavBar/>
             </div>
         );
     }
