@@ -43,6 +43,7 @@ class App extends Component {
                 <p className="App-intro">{this.state.dbResponse}</p>
                 <Button></Button>
                 <NavBar/>
+                <div>Arret </div>
             </div>
         );
     }
