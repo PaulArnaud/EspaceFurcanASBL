@@ -2,21 +2,42 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
 
+var users = mongoose.connection.collection("users");
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  mongoose.connection.collection('users').find({}).toArray(function(err, result) {
+  users.find({}).toArray(function(err, result) {
+    if (err) throw err;
     res.send(result);
   });
 });
 
-router.get('/:userId', function(req, res, next){
-  console.log(req.params.userId);
-  var query = { userId: parseInt(req.params.userId) };
-  console.log(query);
-  mongoose.connection.collection('users').findOne(query,function(err,result){
+router.get('/:id', function(req, res, next){
+  users.findOne({ userId: req.params.id },function(err,result){
     if (err) throw err;
-    console.log(result);
     res.send(result);
+  });
+});
+
+router.post('/',function(req,res,next){
+  users.insertOne(req.body,(err,result)=> {
+    if (err) throw err;
+    res.send("User added");
+  });
+});
+
+router.put('/:id/update', function(req,res,next){
+  users.findOneAndUpdate({query:{ userId: req.params.id},
+  update:{name:"SuperTrop"}}, (req.body,(err,result)=> {
+    if (err) throw err;
+    res.send("User updated");
+  }));
+});
+
+router.delete('/:id/delete', function(req,res,next){
+  users.findOneAndDelete({query:{userId: req.params.id}},function(err,result){
+    if (err) throw err;
+    res.send("User deleted");
   });
 });
 
