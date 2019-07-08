@@ -3,6 +3,8 @@ import "./App.css";
 import NavBar from "./NavBar";
 import Header from "./Header";
 import Footer from "./Footer";
+import Form from "./SignIn";
+import Users from "./Users";
 
 class App extends Component {
     constructor(props) {
@@ -29,6 +31,9 @@ class App extends Component {
                 <Header/>
                 <NavBar/>
                 <p className="App-intro">{this.state.dbResponse}</p>
+                <div id="content"></div>
+                <Form/>
+                <Users/>
                 <Toggle/>
                 <Footer/>
             </div>
