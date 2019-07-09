@@ -17,7 +17,6 @@ class NavBar extends Component {
 
   componentDidMount() {
     this.getServices();
-    console.log(Router.name);
   }
 
   render() {
@@ -29,7 +28,6 @@ class NavBar extends Component {
 
     return (
       <nav>
-        <Button/>
         {tabServicesArray}
       </nav>
 
