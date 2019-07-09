@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Navbar.css';
 
 class Users extends Component {
     constructor(props) {
@@ -20,7 +21,6 @@ class Users extends Component {
     render() {
       var listOfUsers = [];
       var users = this.state.users;
-      console.log(users);
       for (var i = 0 ; i < users.length ; i++){
         console.log(users[i]);
         listOfUsers.push(<tr id={users[i]._id}><th>{users[i].userId}</th><th>{users[i].name}</th><th>{users[i].description}</th></tr>);

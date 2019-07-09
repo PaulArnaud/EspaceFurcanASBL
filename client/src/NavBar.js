@@ -17,12 +17,23 @@ class NavBar extends Component {
 
   componentDidMount() {
     this.getServices();
+    console.log(Router.name);
   }
 
   render() {
-    var tabServicesArray = "";
+    var tabServicesArray = [];
+    var services = this.state.services;
+    for (var i = 0 ; i < services.length ; i++ ){
+      tabServicesArray.push(<ul id={services[i]._id }> <a href='/' > {services[i].name} </a></ul>)
+    }
 
-    return <nav> {tabServicesArray} </nav> ;
+    return (
+      <nav>
+        <Button/>
+        {tabServicesArray}
+      </nav>
+
+    );
   }
 }
 
