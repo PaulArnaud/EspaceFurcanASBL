@@ -1,7 +1,7 @@
 version: "2"
 services:    
     client:
-        image: webapp-client
+        build: ./client
         restart: always
         ports:
             - "3000:3000"
@@ -14,7 +14,7 @@ services:
             - webappnetwork
 
     api:
-        image: webapp-api
+        build: ./api 
         restart: always
         ports:
             - "9000:9000"

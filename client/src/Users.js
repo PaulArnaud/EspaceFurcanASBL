@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Navbar.css';
+import { Table } from 'react-bootstrap';
 
 class Users extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class Users extends Component {
         listOfUsers.push(<tr id={users[i]._id}><th>{users[i].userId}</th><th>{users[i].name}</th><th>{users[i].description}</th></tr>);
       }
       return (
-        <table>
+        <Table striped bordered hover >
           <thead>
             <tr>
               <th>Id</th>
@@ -37,8 +38,9 @@ class Users extends Component {
           <tbody>
             {listOfUsers}
           </tbody>
-        </table>
+        </Table>
       );
     }
 };
+
 export default Users;

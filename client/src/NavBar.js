@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Navbar,Nav } from 'react-bootstrap';
 
 class NavBar extends Component {
   constructor(props) {
@@ -23,14 +24,17 @@ class NavBar extends Component {
     var tabServicesArray = [];
     var services = this.state.services;
     for (var i = 0 ; i < services.length ; i++ ){
-      tabServicesArray.push(<ul id={services[i]._id }> <a href='/' > {services[i].name} </a></ul>)
+      tabServicesArray.push(<Nav.Link href='/'>{services[i].name}</Nav.Link>);
     }
 
     return (
-      <nav>
-        {tabServicesArray}
-      </nav>
-
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">Espace Furcan</Navbar.Brand>
+        <Nav>
+          {tabServicesArray}
+          <Nav.Link href='/'>Paul</Nav.Link>
+        </Nav>
+      </Navbar>
     );
   }
 }

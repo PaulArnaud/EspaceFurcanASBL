@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import {} from 'react-bootstrap';
 var request = require('request');
 
-class Form extends Component {
+class SignIn extends Component {
     constructor(props) {
       super(props);
       this.state = {id: '',name:'',description:''};
@@ -32,22 +32,26 @@ class Form extends Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            ID :
-            <input name="id" type="text" value={this.state.id} onChange={this.handleChange} />
-          </label>
-          <label>
-            Name :
-            <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-          </label>
-          <label>
-            Description :
-            <input name="description" type="text" value={this.state.description} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Envoyer" />
-        </form>
+        <div>
+
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              ID :
+              <input name="id" type="text" value={this.state.id} onChange={this.handleChange} />
+            </label>
+            <label>
+              Name :
+              <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+            </label>
+            <label>
+              Description :
+              <input name="description" type="text" value={this.state.description} onChange={this.handleChange} />
+            </label>
+            <input to="/" type="submit" value="Envoyer" />
+          </form>
+
+        </div>
       );
     }
 };
-export default Form;
+export default SignIn;

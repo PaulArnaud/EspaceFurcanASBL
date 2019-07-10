@@ -25,7 +25,7 @@ In order to avoid versions problems, I have decided to do this with container (D
 
 3) Run the project :
     To run the project : $ docker-compose up (or $docker-compose --verbose up if you want log for you developpement)
-
+    || Image for service api was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`. ||
 4) React :
     To develop the React app, I have used this web site : https://facebook.github.io/create-react-app/docs/getting-started
 
