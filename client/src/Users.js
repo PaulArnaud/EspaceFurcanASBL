@@ -23,7 +23,7 @@ class Users extends Component {
       var listOfUsers = [];
       var users = this.state.users;
       for (var i = 0 ; i < users.length ; i++){
-        listOfUsers.push(<tr id={users[i]._id}><th>{users[i].userId}</th><th>{users[i].name}</th><th>{users[i].description}</th></tr>);
+        listOfUsers.push(<tr key={users[i]._id}><th>{users[i].userId}</th><th>{users[i].name}</th><th>{users[i].description}</th></tr>);
       }
       return (
         <Table striped bordered hover >

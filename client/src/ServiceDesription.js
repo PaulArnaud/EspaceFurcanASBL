@@ -10,7 +10,7 @@ class ServiceDescription extends Component {
     }
 
     getService(){
-        var request = "http://localhost:9000/services/" + this.props.id;
+        var request = "http://localhost:9000/services/" + this.props.match.serviceId;
         fetch(request)        
             .then(res => res.text())        
             .then(res => this.setState({ service: JSON.parse(res) }))
@@ -25,7 +25,8 @@ class ServiceDescription extends Component {
         return (<div>
             <h1>{this.state.service.name}</h1>
             <p>{this.state.service.description}</p>
-        </div>);
+        </div>
+        );
     }
 }
 

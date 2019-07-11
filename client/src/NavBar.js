@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar,Nav,Button } from 'react-bootstrap';
+import { Link,BrowserRouter as Router,Route } from 'react-router-dom';
+import ServiceDescription from './ServiceDesription';
 
 class NavBar extends Component {
   constructor(props) {
@@ -24,17 +26,25 @@ class NavBar extends Component {
     var tabServicesArray = [];
     var services = this.state.services;
     for (var i = 0 ; i < services.length ; i++ ){
-      tabServicesArray.push(<Button size="sm">{services[i].name}</Button>);
+      var service_Id = services[i].serviceId
+      var servicePath = "/services/" + service_Id
+      
+      tabServicesArray.push(<Link key={service_Id} to={servicePath}>{services[i].name}</Link>);
     }
 
     return (
-      <Navbar bg="dark" variant="dark">
-        <Nav>
-          {tabServicesArray}
-          <Button size="sm" variant="secondary">Sign in</Button>
-          <Button size="sm" variant="secondary">Log in</Button>
-        </Nav>
-      </Navbar>
+      <Router>
+        <div> 
+        <Navbar bg="dark" variant="dark">
+          <Nav>
+            {tabServicesArray}
+            <Button size="sm" variant="secondary">Sign in</Button>
+            <Button size="sm" variant="secondary">Log in</Button>
+          </Nav>
+        </Navbar>
+        <Route path={'/services/:serviceId'} component={ServiceDescription}/>}/>
+      </div>
+      </Router>
     );
   }
 }
