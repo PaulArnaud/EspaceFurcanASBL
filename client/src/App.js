@@ -5,36 +5,25 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SignIn from "./SignIn";
 import Users from "./Users";
-import { Container } from 'react-bootstrap';
+import {} from 'react-bootstrap';
+import BasicExample from "./Example";
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            dbResponse: ""
-        };
-    };
-
-    callDB() {    
-        fetch("http://localhost:9000/testDB")        
-            .then(res => res.text())        
-            .then(res => this.setState({ dbResponse: res }))
-            .catch(err => err);
-    };
-
-    componentDidMount() {
-        this.callDB();
+        this.state = {};
     };
 
     render() {
         return (
-            <Container>
-                <Header/>
-                <NavBar/>
-                <SignIn/>
-                <Users/>
-                <Footer/>
-            </Container>
+            <div>
+            <Header/>
+            <NavBar/>
+            <SignIn/>
+            <Users/>
+            <Footer/>
+            <BasicExample/>
+            </div>
         );
     };
 }
