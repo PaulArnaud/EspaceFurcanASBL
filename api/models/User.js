@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connection.createCollection("users", {
+mongoose.connection.createCollection("user", {
     validator: {
        $jsonSchema: {
           bsonType: "object",

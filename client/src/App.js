@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./NavBar";
 import Header from "./Header";
-import Footer from "./Footer";
 import SignIn from "./SignIn";
 import Users from "./Users";
 import {} from 'react-bootstrap';
@@ -21,7 +20,6 @@ class App extends Component {
             <NavBar/>
             <SignIn/>
             <Users/>
-            <Footer/>
             <BasicExample/>
             </div>
         );

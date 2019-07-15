@@ -42,7 +42,6 @@ class NavBar extends Component {
             <Button size="sm" variant="secondary">Log in</Button>
           </Nav>
         </Navbar>
-        <Route path={'/services/:serviceId'} component={ServiceDescription}/>}/>
       </div>
       </Router>
     );

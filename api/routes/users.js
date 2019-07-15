@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
+var {User,validate} = require("../models/User");
 
 var users = mongoose.connection.collection("users");
 
