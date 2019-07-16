@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar,Nav,Button } from 'react-bootstrap';
+import { Navbar,Nav } from 'react-bootstrap';
 import { Link,BrowserRouter as Router,Route } from 'react-router-dom';
-import ServiceDescription from './ServiceDesription';
+import SignIn from './SignIn';
+import Login from './Login';
 
 class NavBar extends Component {
   constructor(props) {
@@ -38,11 +39,14 @@ class NavBar extends Component {
         <Navbar bg="dark" variant="dark">
           <Nav>
             {tabServicesArray}
-            <Button size="sm" variant="secondary">Sign in</Button>
-            <Button size="sm" variant="secondary">Log in</Button>
+            <Link size="sm" variant="secondary" to="/signin">Sign in</Link>
+            <Link size="sm" variant="secondary" to="/login">Log in</Link>
           </Nav>
         </Navbar>
       </div>
+      <Route path="/signin" component={SignIn} />
+      <Route path="/login" component={Login} />
+
       </Router>
     );
   }

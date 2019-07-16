@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require("mongoose");
-var {User,validate} = require("../models/User");
+var User = require("../models/User");
+var passport = require("passport");
 
-var users = mongoose.connection.collection("users");
+var users = mongoose.connection.collection("User");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -21,6 +22,7 @@ router.get('/:id', function(req, res, next){
 });
 
 router.post('/',function(req,res,next){
+  console.log(req.body);
   users.insertOne(req.body,(err,result)=> {
     if (err) throw err;
     res.send("User added");
@@ -40,6 +42,19 @@ router.delete('/:id/delete', function(req,res,next){
     if (err) throw err;
     res.send("User deleted");
   });
+});
+
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+});
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
 });
 
 module.exports = router;

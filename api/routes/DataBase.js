@@ -17,10 +17,4 @@ mongoose.connection.collection("services").insertMany([
 
 mongoose.connection.dropCollection("users");
 
-mongoose.connection.collection("users").insertMany([
-    { userId: "1", name: "Paul", description:"..."},
-    { userId: "2", name: "Mohamed", description:"..."},
-    { userId: "3", name: "Nicolas", description:"..."}
-]);
-
 console.log("DataBase writed");
