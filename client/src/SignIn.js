@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Form,Container,Col,Button} from 'react-bootstrap';
-var request = require('request');
 
 /*
 TODO
@@ -25,6 +24,7 @@ class SignIn extends Component {
     }
   
     handleSubmit(event) {
+      var request = require('request');
       request.post(
         'http://localhost:9000/users',
         { json: {name:this.state.name,email:this.state.email,password: this.state.password } },

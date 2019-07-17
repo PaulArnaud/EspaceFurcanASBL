@@ -8,7 +8,7 @@ class Users extends Component {
         this.state = {users: ''};
     }
 
-    getServices(){
+    getUsers(){
       fetch("http://localhost:9000/users")        
           .then(res => res.text())        
           .then(res => this.setState({ users: JSON.parse(res) }))
@@ -16,7 +16,7 @@ class Users extends Component {
     }
   
     componentDidMount() {
-      this.getServices();
+      this.getUsers();
     }
   
     render() {
@@ -32,6 +32,7 @@ class Users extends Component {
               <th>Name</th>
               <th>Email</th>
               <th>Password</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

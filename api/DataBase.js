@@ -15,6 +15,4 @@ mongoose.connection.collection("services").insertMany([
     { serviceId: "10", name: "Maintenance", description:"..."}
 ]);
 
-mongoose.connection.dropCollection("users");
-
 console.log("DataBase writed");
