@@ -2,15 +2,26 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 var cors = require("cors");
 var passport = require("passport");
 var session = require("express-session");
-require("./passport")(passport);
+var mongoose = require("mongoose");
+require('./models/User');
+require('./models/Service');
 
+// Database Connection
+mongoose.connect("mongodb://mongodb:27017/test",{ useNewUrlParser: true });
 
-var testDBRouter = require("./DBconfig");
-var data = require('./DataBase');
+mongoose.connection.on("error", error => {
+  console.log("Database connection error:", error);
+});
+
+mongoose.connection.once("open", () => {
+  console.log("Connected to Database!");
+});
+
+var Service = require('./models/Service');
+var data = require('./Data');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var servicesRouter = require("./routes/services");
@@ -22,7 +33,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(cors());
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -30,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/DB", testDBRouter);
 app.use("/services", servicesRouter);
 
 app.use(session({secret: 'secret',resave: true,saveUninitialized: true}));

@@ -1,24 +1,26 @@
 const mongoose = require("mongoose");
 
-mongoose.connection.createCollection("services", {
-    validator: {
-       $jsonSchema: {
-          bsonType: "object",
-          required: [ "service_Id", "name", "description"],
-          properties: {
-            service_Id: {
-                bsonType: "int",
-                description: "must be an integer and is required"
-            },
-            name: {
-                bsonType: "string",
-                description: "must be a string and is required"
-            },
-            description: {
-                bsonType: "string",
-                description: "must be a string and is required"
-            }
-          }
-        }
+const ServiceSchema = new mongoose.Schema( {
+    service_id: {
+        type: "string",
+        required: true,
+        description: "must be an integer and is required"
+    },
+    name: {
+        type: "string",
+        required: true,
+        description: "must be a string and is required"
+    },
+    description: {
+        type: "string",
+        description: "must be a string and is required"
+    },
+    price: {
+        type: "string",
+        description: "must be a string"
     }
 });
+
+const Service =  mongoose.model("Service", ServiceSchema);
+
+module.exports = Service;

@@ -5,7 +5,6 @@ var router = express.Router();
 
 var users = mongoose.connection.model("User");
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   users.find({},(err, result) => {
     if (err) throw err;
