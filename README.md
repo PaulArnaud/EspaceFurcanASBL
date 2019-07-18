@@ -1,11 +1,13 @@
-@Author : Paul Arnaud
-@Date : Jun & July & August 2019
-@Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
+-@ Author : Paul Arnaud
+
+-@ Date : Jun & July & August 2019
+
+-@ Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
 
 This app was developped on Ubuntu 18.04, with VisulStudio Code.
 In order to avoid versions problems, I have decided to do this with container (Docker)
 
-
+I] Tipŝ
 1) Install "Docker" : 
     Try to follow the tutoriel of docker web site (https://docs.docker.com/install)
     I have made the Ubuntu one (https://docs.docker.com/install/linux/docker-ce/ubuntu/)
@@ -26,11 +28,22 @@ In order to avoid versions problems, I have decided to do this with container (D
 3) Run the project :
     To run the project : $ docker-compose up (or $docker-compose --verbose up if you want log for you developpement)
     || Image for service api was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`. ||
-4) React :
+
+
+II] Technologies    
+1) React :
+    React is the frontend.
     To develop the React app, I have used this web site : https://facebook.github.io/create-react-app/docs/getting-started
 
-5) Node :
+2) Node :
+    I use node for the backend. 
+    RESTFULL api.
 
-6) Mongo :
+3) Mongo :
     As many web site we have a connection for user and admin.
+
+
+III] Tools
+1) Postman :
+    A application for testing your api... very usefull.
     
