@@ -9,11 +9,11 @@ var session = require("express-session");
 require("./passport")(passport);
 
 
-var testDBRouter = require("./testDB");
+var testDBRouter = require("./DBconfig");
 var data = require('./DataBase');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var testServices = require("./routes/services");
+var servicesRouter = require("./routes/services");
 
 var app = express();
 
@@ -30,8 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/testDB", testDBRouter);
-app.use("/services", testServices);
+app.use("/DB", testDBRouter);
+app.use("/services", servicesRouter);
 
 app.use(session({secret: 'secret',resave: true,saveUninitialized: true}));
 

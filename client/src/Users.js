@@ -32,7 +32,6 @@ class Users extends Component {
               <th>Name</th>
               <th>Email</th>
               <th>Password</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
