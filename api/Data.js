@@ -2,6 +2,13 @@ const mongoose = require("mongoose");
 
 var Service = mongoose.connection.model('Service');
 
+/*
+Service.remove({},(err,result) => {
+    console.log(err);
+    console.log(result);
+});
+*/
+
 Service.insertMany([
     { service_id: "1", name: "Aide et Conseil", description:"..."},
     { service_id: "2", name: "Formations et Stages", description:"..."},

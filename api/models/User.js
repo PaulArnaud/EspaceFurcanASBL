@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema( {
     user_id: {
         type: "string",
-        required: true,
         description: "must be an integer and is required"
     },
     name: {
@@ -13,6 +12,7 @@ const UserSchema = new mongoose.Schema( {
     },
     email: {
         type: "string",
+        required: true,
         description: "must be a string and is required"
     },
     phone: {

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import ServiceDescription from "./ServiceDesription";
 
 function BasicExample() {
   return (
@@ -26,7 +25,6 @@ function BasicExample() {
 
         <Route exact path="/" component={Home} />
         <Route path="/about" component={NavBar} />
-        <Route path="/test" render={props=> <ServiceDescription id="1"/>}/>
         <Route path="/topics" component={Topics} />
       </div>
     </Router>

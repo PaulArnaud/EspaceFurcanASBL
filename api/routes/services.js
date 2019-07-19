@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next){
-  services.finById({ _id: req.params.id },(err,result) => {
+  services.finById(req.params.id,(err,result) => {
     if (err) throw err;
     res.send(result);
   });
@@ -24,21 +24,21 @@ router.post('/',function(req,res,next){
     name:req.body.name,
     description:req.body.description
   });
-  newService.save().then(data => {
-    res.send(data);
-  }).catch(err => {console.log(err)});
+  newService.save();
+  res.send("Service added")
 });
 
 router.put('/:id', function(req,res,next){
-  services.findByIdAndUpdate({ _id: req.params.id},
-  {update:{name:"SuperTrop"}}, (req.body,(err,result)=> {
-    if (err) throw err;
-    res.send("Service updated");
-  }));
+  services.findByIdAndUpdate(req.params.id,
+  { name: req.body.name,
+    description: req.body.description,
+    services_id: req.body.services_id,
+  });
+  res.send("Service updated");
 });
 
 router.delete('/:id', function(req,res,next){
-  services.findByIdAndRemove({_id: req.params.id},(err,result) => {
+  services.findByIdAndRemove(req.params.id,(err,result) => {
     if (err) throw err;
     res.send("Service deleted");
   });

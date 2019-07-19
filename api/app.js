@@ -4,13 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var cors = require("cors");
 var passport = require("passport");
-var session = require("express-session");
 var mongoose = require("mongoose");
 require('./models/User');
 require('./models/Service');
 
 // Database Connection
-mongoose.connect("mongodb://mongodb:27017/test",{ useNewUrlParser: true });
+
+const db = require("./keys").mongoURI;
+
+mongoose.connect(db,{ useNewUrlParser: true });
 
 mongoose.connection.on("error", error => {
   console.log("Database connection error:", error);
@@ -20,7 +22,6 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Database!");
 });
 
-var Service = require('./models/Service');
 var data = require('./Data');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -42,7 +43,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/services", servicesRouter);
 
-app.use(session({secret: 'secret',resave: true,saveUninitialized: true}));
+require("./passport")(passport);
 
 app.use(passport.initialize());
 app.use(passport.session());

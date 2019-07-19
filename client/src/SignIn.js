@@ -28,7 +28,7 @@ class SignIn extends Component {
       var id = "2";
       request.post(
         'http://localhost:9000/users',
-        { json: {user_id:id,name:this.state.name,email:this.state.email,phone:this.state.phone,password: this.state.password } },
+        { json: {user_id:id,name:this.state.name,email:this.state.email,phone:this.state.phone,password: this.state.password,password2:this.state.passwordConfirm } },
         function (error, response, body) {
           if (!error && response.statusCode === 200) {
               console.log(body);
