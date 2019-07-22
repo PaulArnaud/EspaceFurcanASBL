@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 
 var Service = mongoose.connection.model('Service');
 
-
-Service.remove({},(err,result) => {
-    console.log(err);
-    console.log(result);
-});
-
+Service.deleteMany({});
 
 Service.insertMany([
     { service_id: "1", name: "Aide et Conseil", description:"..."},
@@ -21,5 +16,3 @@ Service.insertMany([
     { service_id: "9", name: "Réparation", description:"..."},
     { service_id: "10", name: "Maintenance", description:"..."}
 ]);
-
-console.log("DataBase writed");

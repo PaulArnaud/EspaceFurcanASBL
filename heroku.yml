@@ -1,6 +1,0 @@
-build:
-  docker:
-    web: docker-compose.yml
-
-run:
-  web: docker-compose up --build
