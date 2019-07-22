@@ -2,16 +2,14 @@ var express = require('express');
 var mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../keys");
-
+const keys = require("../config/keys");
 
 var router = express.Router();
 
-const validateRegisterInput = require("../register");
-const validateLoginInput = require("../login");
+const validateRegisterInput = require("../helpers/register");
+const validateLoginInput = require("../helpers/login");
 
 var User = mongoose.model("User");
-
 
 // CRUD //
 router.get('/', function(req, res, next) {

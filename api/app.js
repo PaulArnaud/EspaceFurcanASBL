@@ -10,7 +10,7 @@ require('./models/Service');
 
 // Database Connection
 
-const db = require("./keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 mongoose.connect(db,{ useNewUrlParser: true });
 
@@ -43,7 +43,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/services", servicesRouter);
 
-require("./passport")(passport);
+require("./helpers/passport")(passport);
 
 app.use(passport.initialize());
 app.use(passport.session());

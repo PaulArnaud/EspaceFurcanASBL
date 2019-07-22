@@ -35,8 +35,9 @@ II] Technologies
 2) Node : (Backend)
     RESTFULL api.
 
-3) Mongo :
+3) Mongo : (Database)
     As many web site we have a connection for user and admin.
+
 
 
 III] Tools
@@ -44,4 +45,9 @@ III] Tools
     A application for testing your api... very usefull.
 
 2)
+
+IV] Modules 
+1) Mongoose
+2) Redux (be carefull I use the Redux Devtools)
+3) 
     
