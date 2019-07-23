@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema( {
+const UserSchema = new mongoose.Schema({
     user_id: {
         type: "string",
         description: "must be an integer and is required"
@@ -26,6 +26,6 @@ const UserSchema = new mongoose.Schema( {
     }
 });
 
-const User =  mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

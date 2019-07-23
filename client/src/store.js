@@ -3,15 +3,14 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 const initialState = {};
 const middleware = [thunk];
-console.log(typeof(rootReducer));
-console.log(typeof(middleware));
-console.log(typeof(middleware));
 const store = createStore(
   rootReducer,
   initialState,
+  middleware
+  /*
   compose(
     applyMiddleware(...middleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  )*/
 );
 export default store;

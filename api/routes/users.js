@@ -12,46 +12,47 @@ const validateLoginInput = require("../helpers/login");
 var User = mongoose.model("User");
 
 // CRUD //
-router.get('/', function(req, res, next) {
-  User.find({},(err, result) => {
+router.get('/', function (req, res, next) {
+  User.find({}, (err, result) => {
     if (err) throw err;
     res.send(result);
   });
 });
 
-router.get('/:id', function(req, res, next){
-  User.finById(req.params.id,(err,result) => {
+router.get('/:id', function (req, res, next) {
+  User.finById(req.params.id, (err, result) => {
     if (err) throw err;
     res.send(result);
   });
 });
 
 
-router.post('/',function(req,res,next){
+router.post('/', function (req, res, next) {
   const newUser = new User({
-    name:req.body.name,
-    email:req.body.email,
-    password:req.body.password,
-    phone:req.body.phone,
-    user_id:req.body.user_id
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    phone: req.body.phone,
+    user_id: req.body.user_id
   });
   newUser.save();
   res.send("User updated");
 });
 
-router.put('/:id', function(req,res,next){
+router.put('/:id', function (req, res, next) {
   User.findByIdAndUpdate(req.params.id,
-    { name: req.body.name,
+    {
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       phone: req.body.phone,
       user_id: req.body.user_id,
     });
-    res.send("User updated");
+  res.send("User updated");
 });
 
-router.delete('/:id', function(req,res,next){
-  User.findByIdAndRemove(req.params.id,(err,result)=>{
+router.delete('/:id', function (req, res, next) {
+  User.findByIdAndRemove(req.params.id, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send("User deleted");
@@ -77,7 +78,7 @@ router.post('/register', (req, res) => {
         email: req.body.email,
         password: req.body.password
       });
-  // Hash password before saving in database
+      // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
@@ -107,34 +108,34 @@ router.post("/login", (req, res) => {
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
-  // Check password
-   bcrypt.compare(password, user.password).then(isMatch => {
-    if (isMatch) {
-      // User matched
-      // Create JWT Payload
-      const payload = {
-        id: user.id,
-        name: user.name
-      };
-    // Sign token
-      jwt.sign(
-        payload,
-        keys.secretOrKey,
-        {
-          expiresIn: 31556926 // 1 year in seconds
-        },
-        (err, token) => {
-          res.json({
-            success: true,
-            token: "Bearer " + token
-          });
-        }
-      );
-    } else {
-      return res
-        .status(400)
-        .json({ passwordincorrect: "Password incorrect" });
-    }
+    // Check password
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        // User matched
+        // Create JWT Payload
+        const payload = {
+          id: user.id,
+          name: user.name
+        };
+        // Sign token
+        jwt.sign(
+          payload,
+          keys.secretOrKey,
+          {
+            expiresIn: 31556926 // 1 year in seconds
+          },
+          (err, token) => {
+            res.json({
+              success: true,
+              token: "Bearer " + token
+            });
+          }
+        );
+      } else {
+        return res
+          .status(400)
+          .json({ passwordincorrect: "Password incorrect" });
+      }
     });
   });
 });

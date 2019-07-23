@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ServiceSchema = new mongoose.Schema( {
+const ServiceSchema = new mongoose.Schema({
     service_id: {
         type: "string",
         required: true,
@@ -21,6 +21,6 @@ const ServiceSchema = new mongoose.Schema( {
     }
 });
 
-const Service =  mongoose.model("Service", ServiceSchema);
+const Service = mongoose.model("Service", ServiceSchema);
 
 module.exports = Service;
