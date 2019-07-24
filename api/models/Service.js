@@ -16,7 +16,8 @@ const ServiceSchema = new mongoose.Schema({
         description: "must be a string and is required"
     },
     price: {
-        type: "string",
+        type: Map,
+        of: String,
         description: "must be a string"
     }
 });

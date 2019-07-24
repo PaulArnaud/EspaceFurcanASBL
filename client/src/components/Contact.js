@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {} from "react-router-dom";
+import { } from "react-router-dom";
 
 class Contact extends Component {
     render() {
@@ -51,7 +51,7 @@ class Contact extends Component {
                     </div>
                 </div>
             </div>
-                );
-            }
-        }
+        );
+    }
+}
 export default Contact;

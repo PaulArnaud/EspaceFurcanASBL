@@ -5,8 +5,11 @@ var cookieParser = require('cookie-parser');
 var cors = require("cors");
 var passport = require("passport");
 var mongoose = require("mongoose");
+
+// Models
 require('./models/User');
 require('./models/Service');
+require('./models/SocialCategory');
 
 // Database Connection
 
@@ -22,11 +25,11 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Database!");
 });
 
-// 
 var data = require('./Data');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var servicesRouter = require("./routes/services");
+var socialcategoryRouter = require("./routes/socialcategory");
 
 var app = express();
 
@@ -43,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/services", servicesRouter);
+app.use("/socialcategory", socialcategoryRouter);
 
 require("./helpers/passport")(passport);
 

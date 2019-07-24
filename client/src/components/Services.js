@@ -1,11 +1,37 @@
 import React, { Component } from "react";
 import { } from "react-router-dom";
+import axios from "axios";
+
+import Service from "./Service";
+
 class Services extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            services: '',
+            imageURL: '',
+        };
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:9000/services')
+            .then(response => {
+                this.setState({ services: response.data });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
     render() {
+        var listOfService = [];
+        var services = this.state.services;
+        for (var i = 0; i < services.length; i++) {
+            listOfService.push(<Service key={services[i]._id} service={services[i]} />);
+        }
         return (
             <div>
-                <p> Services </p>
-                <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                {listOfService}
             </div>
         );
     }

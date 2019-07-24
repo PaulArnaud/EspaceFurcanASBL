@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {} from "react-router-dom";
+import { } from "react-router-dom";
 
 class Reservation extends Component {
-    render(){
+    render() {
         return (
             <div>
                 <p> Reservation </p>
