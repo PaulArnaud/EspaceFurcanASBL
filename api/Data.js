@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 var Service = mongoose.connection.model('Service');
 var SocialCategory = mongoose.connection.model('SocialCategory');
+var Reservation = mongoose.connection.model('Reservation');
+var User = mongoose.connection.model('User');
 
 var prices = {
     "CPAS": "0",
@@ -46,3 +48,13 @@ SocialCategory.insertMany([
     console.log("Social Category writed");
 });
 
+User.insertMany([
+
+], (err, result) => {
+    console.log("User writed");
+});
+Reservation.insertMany([
+    
+], (err, result) => {
+    console.log("Reservation writed");
+});

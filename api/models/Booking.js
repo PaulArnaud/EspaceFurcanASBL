@@ -1,5 +1,0 @@
-/*
-
-Booking Model
-
-*/

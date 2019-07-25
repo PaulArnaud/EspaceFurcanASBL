@@ -7,8 +7,9 @@ var passport = require("passport");
 var mongoose = require("mongoose");
 
 // Models
-require('./models/User');
 require('./models/Service');
+require('./models/User');
+require('./models/Reservation');
 require('./models/SocialCategory');
 
 // Database Connection
@@ -30,12 +31,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var servicesRouter = require("./routes/services");
 var socialcategoryRouter = require("./routes/socialcategory");
+var reservationRouter = require('./routes/reservations');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 app.use(cors());
 app.use(express.json());
@@ -47,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/services", servicesRouter);
 app.use("/socialcategory", socialcategoryRouter);
+app.use("/reservations",reservationRouter);
 
 require("./helpers/passport")(passport);
 

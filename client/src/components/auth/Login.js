@@ -52,15 +52,14 @@ class Login extends Component {
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
+              <i className="material-icons left">keyboard_backspace</i> Retour à l'accueil
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Login</b> below
+                <b>Connexion</b>
               </h4>
               <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
+                Pas de comtpe ? <Link to="/register">Inscription</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -92,7 +91,7 @@ class Login extends Component {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Mot de passe</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
@@ -100,7 +99,7 @@ class Login extends Component {
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} type="submit" className="btn btn-large waves-effect waves-light hoverable green accent-3">
-                  Login
+                  Connexion
                 </button>
               </div>
             </form>
