@@ -49,4 +49,11 @@ router.delete('/:id', function (req, res, next) {
     });
 });
 
+router.get('/user/:id',function (req,res,next) {
+    reservations.find({user: req.params.id}, (err,result) => {
+        if (err) throw err;
+        res.send(result);
+    });
+});
+
 module.exports = router;
