@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { } from "react-router-dom";
 import axios from "axios";
+import { registerReservation } from '../actions/resActions';
 
 class Reservation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            services: ""
+            services: "",
+            service: '',
+            date: '',
+            hour: ''
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -20,6 +26,25 @@ class Reservation extends Component {
             });
     }
 
+    handleChange(event) {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        alert(this.state.service + " /n " + this.state.date + " /n " + this.state.hour);
+        const { user } = this.props.auth;
+        const newReservation = {
+            date: this.state.date,
+            hour: this.state.hour,
+            user: user.id,
+            service: this.state.service
+        };
+        this.props.registerReservation(newReservation, this.props.history);
+    }
+
     render() {
         var listOfService = [];
         var services = this.state.services;
@@ -28,14 +53,19 @@ class Reservation extends Component {
         }
         return (
             <div className="container">
-                <input type="text" className="timepicker" placeholder="Choississez une heure" />
-                <input type="text" className="datepicker" placeholder="Choississez une date" />
-                <div className="input-field col s12">
-                    <select className="browser-default" defaultValue={'DEFAULT'}>
-                        <option key="0" value="DEFAULT" disabled>Choississez un service</option>
-                        {listOfService}
-                    </select>
-                </div>
+                <form className="center" onSubmit={this.handleSubmit}>
+                    <input type="text" className="timepicker" value={this.state.hour} onChange={this.handleChange} placeholder="Choississez une heure" />
+                    <input type="text" className="datepicker" value={this.state.date} onChange={this.handleChange} placeholder="Choississez une date" />
+                    <div className="input-field col s12">
+                        <select className="browser-default" defautlvalue="DEFAULT" onChange={this.handleChange}>
+                            <option key="0" value="DEFAULT" disabled>Choississez un service</option>
+                            {listOfService}
+                        </select>
+                    </div>
+                    <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                        <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} type="submit" className="btn btn-large waves-effect waves-light hoverable green accent-3"> Réservation </button>
+                    </div>
+                </form>
             </div>
         );
     }

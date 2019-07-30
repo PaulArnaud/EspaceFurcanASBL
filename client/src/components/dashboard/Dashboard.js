@@ -10,7 +10,7 @@ class Dashboard extends Component {
     e.preventDefault();
     this.props.logoutUser();
   };
-  
+
   render() {
     const { user } = this.props.auth;
     return (
@@ -40,13 +40,16 @@ class Dashboard extends Component {
     );
   }
 }
+
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
+
 const mapStateToProps = state => ({
   auth: state.auth
 });
+
 export default connect(
   mapStateToProps,
   { logoutUser }
