@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { } from "react-router-dom";
 import axios from "axios";
 import { registerReservation } from '../actions/resActions';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 class Reservation extends Component {
     constructor(props) {
@@ -63,7 +65,7 @@ class Reservation extends Component {
                         </select>
                     </div>
                     <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                        <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} type="submit" className="btn btn-large waves-effect waves-light hoverable green accent-3"> Réservation </button>
+                        <button style={{ width: "200px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} type="submit" className="btn btn-large waves-effect waves-light hoverable green accent-3"> Réservation </button>
                     </div>
                 </form>
             </div>
@@ -71,4 +73,15 @@ class Reservation extends Component {
     }
 }
 
-export default Reservation;
+Reservation.propTypes = {
+    registerReservation: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+});
+
+export default connect(
+    mapStateToProps,
+    { registerReservation }
+)(Reservation);
+

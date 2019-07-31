@@ -5,16 +5,17 @@ const router = express.Router();
 var reservations = mongoose.connection.model("Reservation");
 
 router.get('/', function (req, res, next) {
-    reservations.find({}, (err, result) => {
+    const query = req.query;
+    reservations.find(query, (err, result) => {
         if (err) throw err;
         res.send(result);
     });
 });
 
 router.get('/:id', function (req, res, next) {
-    reservations.finById(req.params.id, (err, result) => {
-        if (err) throw err;
-        res.send(result);
+    reservations.finById(req.params.id,(err, result) => {
+            if (err) throw err;
+            res.send(result);
     });
 });
 

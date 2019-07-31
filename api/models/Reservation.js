@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const Service = require('./Service');
-const User = require('./User');
 
 const ReservationSchema = new mongoose.Schema({
     reservation_id: {
@@ -19,13 +17,13 @@ const ReservationSchema = new mongoose.Schema({
     },
     service: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: Service,
+        ref: "Service",
         required: true,
         description: "service"
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: User,
+        ref: "User",
         required: true,
         description: 'user'
     }
