@@ -1,6 +1,7 @@
 [logo](http://www.espacefurcan.be/img/logo-footer.png)
 
-Reference-style: ![alt text][logo]
+Reference-style: 
+![alt text][logo]
 
 @ Author : Paul Arnaud
 
