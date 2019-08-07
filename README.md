@@ -1,10 +1,10 @@
-# README - Espace Furcan Dev Web Site
+# ![alt text](http://www.espacefurcan.be/img/logo-footer.png)
 
-![alt text](http://www.espacefurcan.be/img/logo-footer.png) ------
+## README - Espace Furcan Dev Web Site
 
-# I] Tips
+## I] Tips
 
-## 1) Install Docker
+### 1) Install Docker
 
 Try to follow the tutoriel of [docker web site](https://docs.docker.com/install)
 I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
