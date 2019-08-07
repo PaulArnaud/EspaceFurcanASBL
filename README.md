@@ -1,8 +1,8 @@
 # README - Espace Furcan Dev Web Site
 
-![alt text](http://www.espacefurcan.be/img/logo-footer.png).
+![alt text](http://www.espacefurcan.be/img/logo-footer.png) ------
 
-## I] Tips
+# I] Tips
 
 ## 1) Install Docker
 
