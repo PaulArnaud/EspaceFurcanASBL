@@ -1,16 +1,14 @@
-# H1
+# README
 
-## H2
+## TIPS
 
-### H3
+### Install Docker
 
-#### H4
+### Explaination
 
-##### H5
+### Run the project
 
-###### H6
-
-## I] Environnement
+## Tips
 
 ### 1) Install Docker
 
