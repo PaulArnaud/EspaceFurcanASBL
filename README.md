@@ -1,16 +1,17 @@
 # README
 
-## TIPS
+@ Author : Paul Arnaud
 
-### Install Docker
+@ Date : Jun & July & August 2019
 
-### Explaination
+@ Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
 
-### Run the project
+This app was developped on Ubuntu 18.04, with VisulStudio Code.
+In order to avoid versions problems, I have decided to do this with container (Docker).
 
 ## Tips
 
-### 1) Install Docker
+### Install Docker
 
 Try to follow the tutoriel of [docker web site](https://docs.docker.com/install).
 
@@ -18,7 +19,7 @@ I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubu
 
 IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/) (to transform docker permission).
 
-### 2) Explaination
+### Explaination
 
 To avoid versions problems I decided to make 3 docker's containers : one for node (server side), one for react (client side) and one for Mongo (database).
 
@@ -28,21 +29,21 @@ I follow these tutoriel which were not update with the new version of npm (and m
 
 * [Docker & MERN Stack](https://www.freecodecamp.org/news/create-a-fullstack-react-express-mongodb-app-using-docker-c3e3e21c4074/).
 
-### 3) Run the project
+### Run the project
 
 To run the project : `docker-compose up` (or `docker-compose --verbose up` if you want log for you developpement).
 
 To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
 
-## II] Technologies
+## Technologies
 
-### 1) React - (Frontend)
+### React - (Frontend)
 
 * [React](https://reactjs.org).
 
 To develop the React app, I have used this [web site](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### 2) Node - (Backend)
+### Node - (Backend)
 
 * [Node](https://nodejs.org).
 
@@ -50,31 +51,31 @@ RESTFULL api.
 
 CRUD with models : User/ Reservation / Service / SocialCategory.
 
-### 3) Mongo - (Database)
+### Mongo - (Database)
 
 * [Mongo](https://www.mongodb.com/).
 
 As many web site we have a connection for user and admin.
 
-## III] Tools
+## Tools
 
-### 1) Postman
+### Postman
 
 * [Postman](https://www.getpostman.com/).
 
 A application for testing your api... very usefull.
 
-## IV] Main-Modules
+## Main-Modules
 
-### 1) Mongoose
+### Mongoose
 
 * [Mongoose](https://mongoosejs.com).
 
-### 2) Redux
+### Redux
 
 * [Redux](https://redux.js.org/).
 
-## V] Tutoriels
+## Tutoriels
 
 ### MERN Stack
 
@@ -100,16 +101,9 @@ A application for testing your api... very usefull.
 
 * [Redux Video Explication](https://www.youtube.com/watch?v=93p3LxR9xfM&feature=youtu.be&source=post_page---------------------------).
 
-## VI] Main-commands
+## Main-commands
 
 * `git clone https://github.com/PaulArnaud/EspaceFurcanASBL.git`.
 * `docker-compose up`.
 
-@ Author : Paul Arnaud
 
-@ Date : Jun & July & August 2019
-
-@ Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
-
-This app was developped on Ubuntu 18.04, with VisulStudio Code.
-In order to avoid versions problems, I have decided to do this with container (Docker).
