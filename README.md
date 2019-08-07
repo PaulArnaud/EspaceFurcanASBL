@@ -79,7 +79,7 @@ A application for testing your api... very usefull.
 
 ## Tutoriels
 
-### MERN Stack
+### MERN-Stack
 
 * [Tutoriel 1](https://medium.com/@axel.marciano/votre-premi%C3%A8re-application-en-react-node-express-mongodb-5ab0dc531091).
 
@@ -106,6 +106,5 @@ A application for testing your api... very usefull.
 ## Main-commands
 
 * `git clone https://github.com/PaulArnaud/EspaceFurcanASBL.git`.
+
 * `docker-compose up`.
-
-
