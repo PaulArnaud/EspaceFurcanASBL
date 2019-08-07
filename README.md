@@ -1,13 +1,14 @@
 # ![alt text](http://www.espacefurcan.be/img/logo-footer.png)
 
-## I] Tips
+## I) Tips
 
 ### 1) Install Docker
 
-Try to follow the tutoriel of [docker web site](https://docs.docker.com/install)
-I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+Try to follow the tutoriel of [docker web site](https://docs.docker.com/install).
 
-IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/).(to transform docker permission)
+I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/) [alt ref](https://upload.wikimedia.org/wikipedia/commons/9/94/Ubuntu_logoib.svg).
+
+IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/) (to transform docker permission).
 
 ### 2) Explaination
 
