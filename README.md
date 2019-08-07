@@ -19,7 +19,7 @@ Try to follow the tutoriel of [docker web site](https://docs.docker.com/install)
 
 I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
-IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/) (to transform docker permission).
+IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/) (to modify docker permission).
 
 ### Explaination
 
@@ -61,6 +61,10 @@ As many web site we have a connection for user and admin.
 
 ## Tools
 
+### Visual Studio
+
+* [Visual Studio](https://visualstudio.microsoft.com).
+
 ### Postman
 
 * [Postman](https://www.getpostman.com/).
@@ -69,13 +73,21 @@ A application for testing your api... very usefull.
 
 ## Main-Modules
 
-### Mongoose
-
 * [Mongoose](https://mongoosejs.com).
 
-### Redux
-
 * [Redux](https://redux.js.org/).
+
+* [Express](https://expressjs.com/).
+
+* [Passport](http://www.passportjs.org/).
+
+* [Bcrypt](https://www.npmjs.com/package/bcryptjs).
+
+* [Cookie-Parser](https://www.npmjs.com/package/cookie-parser).
+
+* [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start).
+
+* [Axios](https://github.com/axios/axios).
 
 ## Tutoriels
 
