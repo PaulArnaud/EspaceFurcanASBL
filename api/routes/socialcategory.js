@@ -1,13 +1,12 @@
-var express = require('express');
-var mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require("mongoose");
+const router = express.Router();
 
-var router = express.Router();
+const socialcategory = mongoose.model("SocialCategory");
 
-var socialcategory = mongoose.model("SocialCategory");
-
-// CRUD //
 router.get('/', function (req, res, next) {
-    socialcategory.find({}, (err, result) => {
+    const query = req.query;
+    socialcategory.find(query, (err, result) => {
         if (err) throw err;
         res.send(result);
     });

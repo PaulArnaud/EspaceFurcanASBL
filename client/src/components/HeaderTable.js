@@ -5,14 +5,14 @@ class HeaderTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            financialSituation: ""
+            socialcategory: ""
         };
     }
 
     componentDidMount() {
         axios.get('http://localhost:9000/socialcategory')
             .then(response => {
-                this.setState({ financialSituation: response.data });
+                this.setState({ socialcategory: response.data });
             })
             .catch(error => {
                 console.log(error);
@@ -21,7 +21,7 @@ class HeaderTable extends Component {
 
     render() {
         var listOfLabel = []
-        var labels = this.state.financialSituation;
+        var labels = this.state.socialcategory;
         for (var i = 0; i < labels.length; i++) {
             listOfLabel.push(<th key={labels[i]._id}> {labels[i].name}</th>)
         }

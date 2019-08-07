@@ -29,7 +29,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-server.on('request', (request,response ) => {
+server.on('request', (request, response) => {
   console.log(request.url);
 });
 

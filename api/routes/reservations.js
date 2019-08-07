@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
 
-var reservations = mongoose.connection.model("Reservation");
+const reservations = mongoose.connection.model("Reservation");
 
 router.get('/', function (req, res, next) {
     const query = req.query;
@@ -13,9 +13,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-    reservations.finById(req.params.id,(err, result) => {
-            if (err) throw err;
-            res.send(result);
+    reservations.finById(req.params.id, (err, result) => {
+        if (err) throw err;
+        res.send(result);
     });
 });
 
@@ -47,13 +47,6 @@ router.delete('/:id', function (req, res, next) {
     reservations.findByIdAndRemove(req.params.id, (err, result) => {
         if (err) throw err;
         res.send("Reservation deleted");
-    });
-});
-
-router.get('/user/:id',function (req,res,next) {
-    reservations.find({user: req.params.id}, (err,result) => {
-        if (err) throw err;
-        res.send(result);
     });
 });
 

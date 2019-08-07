@@ -2,10 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
 
-var services = mongoose.connection.model("Service");
+const services = mongoose.connection.model("Service");
 
 router.get('/', function (req, res, next) {
-  services.find({}, (err, result) => {
+  const query = req.query;
+  services.find(query, (err, result) => {
     if (err) throw err;
     res.send(result);
   });

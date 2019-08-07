@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { } from "react-router-dom";
 
 class Contact extends Component {
     render() {
@@ -8,7 +7,7 @@ class Contact extends Component {
                 <div className="row">
                     <div className="col s12 center">
 
-                        <div className="card blue-grey darken-1">
+                        <div className="card teal darken-4 darken-1">
                             <div className="card-action">
                                 <i className="material-icons"> phone </i>
                             </div>
@@ -23,7 +22,7 @@ class Contact extends Component {
                 <div className="row">
                     <div className="col s12 center">
 
-                        <div className="card blue-grey darken-1">
+                        <div className="card teal darken-4 darken-1">
                             <div className="card-action">
                                 <i className="material-icons"> email </i>
                             </div>
@@ -38,7 +37,7 @@ class Contact extends Component {
                 <div className="row">
                     <div className="col s12 center">
 
-                        <div className="card blue-grey darken-1">
+                        <div className="card teal darken-4 darken-1">
                             <div className="card-action">
                                 <i className="material-icons"> location_on </i>
                             </div>
@@ -54,4 +53,5 @@ class Contact extends Component {
         );
     }
 }
+
 export default Contact;

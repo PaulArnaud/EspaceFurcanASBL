@@ -1,10 +1,10 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var cors = require("cors");
-var passport = require("passport");
-var mongoose = require("mongoose");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const cors = require("cors");
+const passport = require("passport");
+const mongoose = require("mongoose");
 
 // Models
 require('./models/Service');
@@ -26,14 +26,16 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Database!");
 });
 
-var data = require('./Data');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var servicesRouter = require("./routes/services");
-var socialcategoryRouter = require("./routes/socialcategory");
-var reservationRouter = require('./routes/reservations');
+// Routes
+const data = require('./Data');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const servicesRouter = require("./routes/services");
+const socialcategoryRouter = require("./routes/socialcategory");
+const reservationRouter = require('./routes/reservations');
 
-var app = express();
+// App
+const app = express();
 
 app.use(cors());
 app.use(express.json());

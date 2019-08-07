@@ -23,11 +23,6 @@ class Navbar extends Component {
                   <i className="material-icons"> info </i>
                 </Link>
               </li>
-              <li>
-                <Link to="/" >
-                  <i className="material-icons"> person </i>
-                </Link>
-              </li>
             </ul>
           </div>
         </nav>
@@ -35,4 +30,5 @@ class Navbar extends Component {
     );
   }
 }
+
 export default Navbar;

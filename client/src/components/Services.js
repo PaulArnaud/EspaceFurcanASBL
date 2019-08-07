@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { } from "react-router-dom";
 import axios from "axios";
-
 import Service from "./Service";
 
 class Services extends Component {
@@ -36,4 +34,5 @@ class Services extends Component {
         );
     }
 }
+
 export default Services;

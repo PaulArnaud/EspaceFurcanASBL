@@ -1,31 +1,29 @@
-var express = require('express');
-var mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
-
-var router = express.Router();
-
+const router = express.Router();
 const validateRegisterInput = require("../helpers/register");
 const validateLoginInput = require("../helpers/login");
 
-var User = mongoose.model("User");
+const user = mongoose.model("User");
 
 // CRUD //
 router.get('/', function (req, res, next) {
-  User.find({}, (err, result) => {
+  const query = req.query;
+  user.find(query, (err, result) => {
     if (err) throw err;
     res.send(result);
   });
 });
 
 router.get('/:id', function (req, res, next) {
-  User.finById(req.params.id, (err, result) => {
+  user.finById(req.params.id, (err, result) => {
     if (err) throw err;
     res.send(result);
   });
 });
-
 
 router.post('/', function (req, res, next) {
   const newUser = new User({
@@ -40,7 +38,7 @@ router.post('/', function (req, res, next) {
 });
 
 router.put('/:id', function (req, res, next) {
-  User.findByIdAndUpdate(req.params.id,
+  user.findByIdAndUpdate(req.params.id,
     {
       name: req.body.name,
       email: req.body.email,
@@ -52,7 +50,7 @@ router.put('/:id', function (req, res, next) {
 });
 
 router.delete('/:id', function (req, res, next) {
-  User.findByIdAndRemove(req.params.id, (err, result) => {
+  user.findByIdAndRemove(req.params.id, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send("User deleted");
@@ -69,7 +67,7 @@ router.post('/register', (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  User.findOne({ email: req.body.email }).then(user => {
+  user.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
     } else {
@@ -103,7 +101,7 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   // Find user by email
-  User.findOne({ email }).then(user => {
+  user.findOne({ email }).then(user => {
     // Check if user exists
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
