@@ -6,7 +6,7 @@
 
 Try to follow the tutoriel of [docker web site](https://docs.docker.com/install).
 
-I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/) [alt ref](https://upload.wikimedia.org/wikipedia/commons/9/94/Ubuntu_logoib.svg).
+I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/) ![alt ref](https://upload.wikimedia.org/wikipedia/commons/9/94/Ubuntu_logoib.svg).
 
 IMPORTANT : It was important for me also to follow this [guide](https://docs.docker.com/install/linux/linux-postinstall/) (to transform docker permission).
 
@@ -56,7 +56,7 @@ As many web site we have a connection for user and admin.
 
 A application for testing your api... very usefull.
 
-## IV] Main Modules
+## IV] Main-Modules
 
 ### 1) Mongoose
 
@@ -92,7 +92,7 @@ A application for testing your api... very usefull.
 
 * [Redux Video Explication](https://www.youtube.com/watch?v=93p3LxR9xfM&feature=youtu.be&source=post_page---------------------------).
 
-## VI] Main commands
+## VI] Main-commands
 
 * `git clone https://github.com/PaulArnaud/EspaceFurcanASBL.git`.
 * `docker-compose up`.
