@@ -1,10 +1,10 @@
-# README : Espace Furcan Dev Web Site
+# README - Espace Furcan Dev Web Site
 
-![alt text](http://www.espacefurcan.be/img/logo-footer.png)
+![alt text](http://www.espacefurcan.be/img/logo-footer.png).
 
 ## I] Tips
 
-### 1) Install Docker
+## 1) Install Docker
 
 Try to follow the tutoriel of [docker web site](https://docs.docker.com/install)
 I have made the [Ubuntu one](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
@@ -90,4 +90,4 @@ _ `docker-compose up`.
 @ Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
 
 This app was developped on Ubuntu 18.04, with VisulStudio Code.
-In order to avoid versions problems, I have decided to do this with container (Docker)
+In order to avoid versions problems, I have decided to do this with container (Docker).
