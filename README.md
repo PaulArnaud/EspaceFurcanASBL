@@ -91,6 +91,8 @@ A application for testing your api... very usefull.
 
 ## Tutoriels
 
+Here the complete list of guide I used to developp the work.
+
 ### MERN-Stack
 
 * [Tutoriel 1](https://medium.com/@axel.marciano/votre-premi%C3%A8re-application-en-react-node-express-mongodb-5ab0dc531091).
