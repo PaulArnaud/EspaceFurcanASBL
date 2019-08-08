@@ -6,9 +6,14 @@ WORKDIR /angular-client
 COPY package*.json /angular-client/
 # install dependencies
 RUN npm install
+RUN npm install -g @angular/cli #added
+
 # Copy the current directory contents into the container at /client
 COPY . /angular-client/
 # Make port 4200 available to the world outside this container
 EXPOSE 4200
 # Run the app when the container launches
-CMD ["npm","start"]
+#CMD ["npm","start"]
+
+#RUN npm start #executes 'ng serve --host 0.0.0.0' #removed!
+CMD ng serve --host 0.0.0.0 #added
