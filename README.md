@@ -2,11 +2,11 @@
 
 ![alt ref](http://www.espacefurcan.be/img/logo-footer.png)
 
-@ Author : Paul Arnaud
+@ ***Author : Paul Arnaud***
 
-@ Date : Jun & July & August 2019
+@ ***Date : Jun & July & August 2019***
 
-@ Client : Espace Furcan ASBL, a little association which fight against numerical fracture.
+@ ***Client : Espace Furcan ASBL, a little association which fight against numerical fracture.***
 
 This app was developped on Ubuntu 18.04, with VisulStudio Code.
 In order to avoid versions problems, I have decided to do this with container (Docker).
