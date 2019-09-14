@@ -10,8 +10,12 @@
 
 This app was developped on Ubuntu 18.04, with VisulStudio Code.
 In order to avoid versions problems, I have decided to do this with container (Docker).
+NODEJS version > 10.0
 
 ## Tips
+
+### Redux DevTools 
+You have ton install Redux Devtools
 
 ### Install Docker
 
