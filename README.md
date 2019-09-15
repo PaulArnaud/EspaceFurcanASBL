@@ -13,7 +13,7 @@ In order to avoid versions problems, I have decided to do this with container (D
 NODEJS version > 10.0
 
 ## Tips
-For your happiness
+
 ### Redux DevTools 
 You have ton install Redux Devtools
 
