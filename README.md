@@ -14,8 +14,9 @@ NODEJS version > 10.0
 
 ## Tips
 
-### Redux DevTools 
-You have ton install Redux Devtools
+### Redux & React DevTools
+
+You have ton install Redux Devtools and React Devtools extension !!!
 
 ### Install Docker
 
